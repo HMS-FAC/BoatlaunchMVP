@@ -1,0 +1,27 @@
+{
+  "name": "boatlaunch",
+  "version": "1.0.0",
+  "description": "mvp project boat launch",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HMS-FAC/BoatlaunchMVP.git"
+  },
+  "author": "@tormod17 @conorc1000 @katkelemen @hdrdavies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HMS-FAC/BoatlaunchMVP/issues"
+  },
+  "homepage": "https://github.com/HMS-FAC/BoatlaunchMVP#readme",
+  "dependencies": {
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0"
+  }
+}
