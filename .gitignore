@@ -27,3 +27,5 @@ build/Release
 node_modules
 temp
 .DS_Store
+
+lib/data.js
