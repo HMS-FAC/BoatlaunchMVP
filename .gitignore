@@ -27,4 +27,8 @@ build/Release
 node_modules
 temp
 .DS_Store
+<<<<<<< HEAD
+=======
+
+>>>>>>> cf8d7345f812d2280055d2da5863fc277b857a24
 lib/data.js
