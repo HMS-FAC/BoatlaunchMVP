@@ -52,7 +52,7 @@
          httpRequest.send();
      }
 
-     fetchJSONFile('/data.JSON', function(data) {
+     fetchJSONFile('/data', function(data) {
          // do something with your data
          data = JSON.parse(data);
          Object.keys(data).forEach(function(key) {
