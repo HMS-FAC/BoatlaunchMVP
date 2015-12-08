@@ -2,3 +2,5 @@ node_modules
 /lib/data.js
 .DS_Store
 npm-debug.log
+./lib/data.json
+data.json
