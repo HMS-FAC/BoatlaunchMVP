@@ -54,10 +54,10 @@
          httpRequest.send();
      }
 
-     fetchJSONFile('/data.js', function(file) {
+     fetchJSONFile('/data.js', function(data) {
          // do something with your data
-         console.log(file);
-         data = JSON.parse(data);
+         console.log(data);
+         
         
      });
 
