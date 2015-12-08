@@ -15,7 +15,8 @@ server.register(require('inert'), function(err) {
     server.route([
 
     	{ method: 'GET', path: '/', handler: { file: "public/index.html"} },
-        { method: 'GET', path: '/map.js', handler: { file: 'public/map.js'} }
+        { method: 'GET', path: '/map.js', handler: { file: 'public/map.js'} },
+        { method: 'GET', path:'/data.JSON', handler: { file: 'lib/data.json'}}
 
     ]);
 });
