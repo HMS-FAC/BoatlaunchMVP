@@ -56,11 +56,9 @@
 
      fetchJSONFile('/data.js', function(file) {
          // do something with your data
-         console.log(typeof(file));
+         console.log(file);
          data = JSON.parse(data);
-         data.forEach(function(obj) {
-             console.log(obj.longitude + 'XXX' + obj.latitude);
-         });
+        
      });
 
 
