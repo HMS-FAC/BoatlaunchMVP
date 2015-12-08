@@ -45,7 +45,7 @@
          httpRequest.onreadystatechange = function() {
              if (httpRequest.readyState === 4) {
                  if (httpRequest.status === 200) {
-                     var data = httpRequest.responseText;
+                     var data =httpRequest.responseText;
                      if (callback) callback(data);
                  }
              }
@@ -54,10 +54,14 @@
          httpRequest.send();
      }
 
-    fetchJSONFile('/data.js', function(data){
-    // do something with your data
-    console.log(data);
-    });
+     fetchJSONFile('/data.js', function(file) {
+         // do something with your data
+         console.log(typeof(file));
+         data = JSON.parse(data);
+         data.forEach(function(obj) {
+             console.log(obj.longitude + 'XXX' + obj.latitude);
+         });
+     });
 
 
 
