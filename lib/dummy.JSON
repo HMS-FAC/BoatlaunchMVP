@@ -1,0 +1,7 @@
+{"locations":[
+{"slipway":{"coordinates":[50.40,-4.66],"tidal":"full","message":"boom boom"}},
+{"slipway":{"coordinates":[50.07,-5.70],"tidal":"half","message":"badda bing!"}},
+{"slipway":{"coordinates":[50.26,-5.28],"tidal":"quarter","message":"come on!"}},
+{"slipway":{"coordinates":[50.24,-5.02],"tidal":"three-quarters","message":"badda bing!"}},
+{"slipway":{"coordinates":[41.29,-4.78],"tidal":"full","message":"badda bing!"}}
+]}
