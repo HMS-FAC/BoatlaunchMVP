@@ -45,7 +45,7 @@
          httpRequest.onreadystatechange = function() {
              if (httpRequest.readyState === 4) {
                  if (httpRequest.status === 200) {
-                     var data =httpRequest.responseText;
+                     var data = httpRequest.responseText;
                      if (callback) callback(data);
                  }
              }
@@ -54,27 +54,25 @@
          httpRequest.send();
      }
 
-    fetchJSONFile('/data.JSON', function(data) {
+     fetchJSONFile('/data.JSON', function(data) {
          // do something with your data
-         
+
          data = JSON.parse(data);
-         console.log(Object.keys(data).length);
-        Object.keys(data).forEach(function(key){
-            console.log(key);
-            console.log(data[key].longitude + ''+ data[key].latitude);
-        });
+      
+         Object.keys(data).forEach(function(key) {
             
-        
-         
-    });
-
-
-
-     // Adding Markers
-     var marker = new google.maps.Marker({
-         position: new google.maps.LatLng(51.508742, -0.120850),
+               // Adding Markers
+             var marker = new google.maps.Marker({
+                 position: new google.maps.LatLng( Number(data[key].latitude), Number(data[key].longitude))
+             });
+             marker.setMap(map);
+         });
      });
-     marker.setMap(map);
+
+
+
+   
+
 
      // Add Infowindow 
      var infowindow = new google.maps.InfoWindow({
