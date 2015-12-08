@@ -58,27 +58,29 @@
          // do something with your data
 
          data = JSON.parse(data);
-      
+
          Object.keys(data).forEach(function(key) {
-            
-               // Adding Markers
+
+             // Adding Markers
              var marker = new google.maps.Marker({
-                 position: new google.maps.LatLng( Number(data[key].latitude), Number(data[key].longitude))
+                 position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
              });
              marker.setMap(map);
+
+             var infowindow = new google.maps.InfoWindow({
+                 content: data[key].Name
+             });
+
+             marker.addListener('click', function() {
+                 infowindow.open(map, marker);
+             });
+
          });
      });
 
 
      // Add Infowindow 
-     
-     var infowindow = new google.maps.InfoWindow({
-         content: "Hello World!",
-     });
 
-     marker.addListener('click', function() {
-         infowindow.open(map, marker);
-     });
 
      // Search Box
      var input = document.getElementById('pac-input');
