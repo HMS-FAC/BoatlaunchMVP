@@ -70,11 +70,8 @@
      });
 
 
-
-   
-
-
      // Add Infowindow 
+     
      var infowindow = new google.maps.InfoWindow({
          content: "Hello World!",
      });
