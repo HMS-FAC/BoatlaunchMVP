@@ -54,12 +54,19 @@
          httpRequest.send();
      }
 
-     fetchJSONFile('/data.js', function(data) {
+    fetchJSONFile('/data.JSON', function(data) {
          // do something with your data
-         console.log(data);
          
+         data = JSON.parse(data);
+         console.log(Object.keys(data).length);
+        Object.keys(data).forEach(function(key){
+            console.log(key);
+            console.log(data[key].longitude + ''+ data[key].latitude);
+        });
+            
         
-     });
+         
+    });
 
 
 
