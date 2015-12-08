@@ -7,7 +7,7 @@
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
-     // Get current location 
+     // Get current location
      if (navigator.geolocation) {
          browserSupportFlag = true;
          navigator.geolocation.getCurrentPosition(function(position) {
@@ -37,9 +37,7 @@
          map.setCenter(initialLocation);
      }
 
-
      // fetch JSON
-
      function fetchJSONFile(path, callback) {
          var httpRequest = new XMLHttpRequest();
          httpRequest.onreadystatechange = function() {
@@ -54,19 +52,17 @@
          httpRequest.send();
      }
 
-     fetchJSONFile('/data.JSON', function(data) {
+     fetchJSONFile('/data', function(data) {
          // do something with your data
-
          data = JSON.parse(data);
-
          Object.keys(data).forEach(function(key) {
-
              // Adding Markers
              var marker = new google.maps.Marker({
                  position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
              });
              marker.setMap(map);
 
+            // Add Infowindow
              var infowindow = new google.maps.InfoWindow({
                  content: data[key].Name
              });
@@ -74,13 +70,8 @@
              marker.addListener('click', function() {
                  infowindow.open(map, marker);
              });
-
          });
      });
-
-
-     // Add Infowindow 
-
 
      // Search Box
      var input = document.getElementById('pac-input');
