@@ -29,6 +29,6 @@ temp
 .DS_Store
 
 
-lib/data.js
-lib/data.json
+lib/data/data.json
+lib/data/freezedata.json
 npm-debug.log
