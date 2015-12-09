@@ -88,14 +88,12 @@
              var infowindow = new google.maps.InfoWindow({
                  content: content
              });
-
              marker.addListener('click', function() {
                  infowindow.open(map, marker);
              });
          });
-         var mc = new MarkerClusterer(map, markers)
+         var mc = new MarkerClusterer(map, markers);
      });
-
      // Search Box
      var input = document.getElementById('pac-input');
      var searchBox = new google.maps.places.SearchBox(input);
