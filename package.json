@@ -7,8 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./tests/*",
-    "start": "node lib/server.js"
+    "test": "./node_modules/.bin/tape ./tests/*.js",
+    "start": "node lib/server.js",
+    "coverage": "istanbul cover ./node_modules/.bin/tape ./tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "inert": "^3.2.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.1",
     "tape": "^4.2.2"
   }
 }

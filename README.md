@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/HMS-FAC/BoatlaunchMVP.svg)](https://travis-ci.org/HMS-FAC/BoatlaunchMVP)
-
+[![Code Climate](https://codeclimate.com/github/HMS-FAC/BoatlaunchMVP/badges/gpa.svg)](https://codeclimate.com/github/HMS-FAC/BoatlaunchMVP)
+[![codecov.io](https://codecov.io/github/HMS-FAC/BoatlaunchMVP/coverage.svg?branch=master)](https://codecov.io/github/HMS-FAC/BoatlaunchMVP?branch=master)
 ###MVP for Boatlaunch App
 
 This is a repository for the boatlaunch app Minimum Viable Product MVP. Boatlaunch is a company which provides information about slipways and marinas in the UK and Europe. There is currently a boatlaunch website at boatlaunch.co.uk, and there is an app which was built in 2012. Boat launch has an database of around 4000 slipways, each with varying degrees of information. The database (which is stored by firebase) is updated by the users. No authorisation is required to use the website or edit the database. 
