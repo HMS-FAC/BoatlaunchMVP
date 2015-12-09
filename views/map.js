@@ -77,7 +77,7 @@
                  infowindow.open(map, marker);
              });
          });
-         var mc = new MarkerClusterer(map, markers)
+         var mc = new MarkerClusterer(map, markers);
      });
 
      // Search Box
