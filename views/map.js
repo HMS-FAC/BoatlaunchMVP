@@ -63,8 +63,24 @@
              marker.setMap(map);
 
             // Add Infowindow
+             var content = '<div id="name">'+
+                           '<h3>'+data[key].Name+'</h3>'+
+                           '</div>'+
+                           '<div id="website">'+
+                           '<p hidden>'+data[key].Website+'</p>'+
+                           '</div>'+
+                           '<div id="rampDes">'+
+                           '<p hidden>'+data[key].RampDescription+'</p>'+
+                           '</div>'+
+                           '<div id="charges">'+
+                           '<p hidden>'+data[key].Charges+'</p>'+
+                           '</div>'+
+                           '<button onclick="myFunc()" type="button">More Info</button>'+
+                           '</div>';
+
+
              var infowindow = new google.maps.InfoWindow({
-                 content: data[key].Name
+                 content: content
              });
 
              marker.addListener('click', function() {
