@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape ./tests/*.js",
+    "test": "./node_modules/.bin/tape ./tests/*",
     "start": "node lib/server.js"
   },
   "repository": {
