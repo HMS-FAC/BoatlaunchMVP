@@ -1,6 +1,4 @@
-var mapFile = {};
-
- mapFile.initAutocomplete = function() {
+ function initAutocomplete() {
 
      var London = new google.maps.LatLng(51.508742, -0.120850);
 
@@ -127,7 +125,4 @@ var mapFile = {};
          });
          map.fitBounds(bounds);
      });
- }();
-
-
- module.exports = mapFile;
+ }

@@ -9,7 +9,7 @@ test ('test the test: 1+1=2', function(t){
 });
 
 test ('is there a search box in the map', function(t){
-  mapFunc.initAutocomplete();
+  mapFunc();
 
   testMap = false;
 
