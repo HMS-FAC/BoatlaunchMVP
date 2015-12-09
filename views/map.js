@@ -3,7 +3,7 @@
      var London = new google.maps.LatLng(51.508742, -0.120850);
 
      var mapProp = {
-         zoom: 11,
+         zoom: 6,
          center: London,
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
@@ -54,11 +54,10 @@
      }
 
      var markers = [];
-     
+
      fetchJSONFile('/data', function(data) {
          // do something with your data
          data = JSON.parse(data);
-
 
          Object.keys(data).forEach(function(key) {
              // Adding Markers
@@ -66,9 +65,8 @@
                  position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
              });
              markers.push(marker);
+            //  markers.push(index);
              marker.setMap(map);
-
-
 
             // Add Infowindow
              var infowindow = new google.maps.InfoWindow({
@@ -79,6 +77,8 @@
                  infowindow.open(map, marker);
              });
          });
+         console.log(markers.length);
+         var mc = new MarkerClusterer(map, markers)
      });
 
      // Search Box
@@ -131,5 +131,4 @@
          });
          map.fitBounds(bounds);
      });
-    setTimeout(function(){var mc = new MarkerClusterer(map, markers);}, 5000);
  }
