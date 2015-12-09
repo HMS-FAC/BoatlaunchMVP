@@ -20,4 +20,4 @@ Additional features (dependent on finishing above):
 
 This project will be managed using github issues. 
 
-TTD Test Driven Development will be used to guide all stages of the project.
+TDD (Test Driven Development) will be used to guide all stages of the project.
