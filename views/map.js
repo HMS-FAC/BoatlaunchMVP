@@ -4,6 +4,7 @@
 
      var mapProp = {
          zoom: 11,
+         center: London,
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
@@ -54,16 +55,22 @@
 
      var markers = [];
 
+
+
      fetchJSONFile('/data', function(data) {
          // do something with your data
          data = JSON.parse(data);
+
+
          Object.keys(data).forEach(function(key) {
              // Adding Markers
              var marker = new google.maps.Marker({
                  position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
              });
-             marker.setMap(map);
              markers.push(marker);
+             marker.setMap(map);
+
+
 
             // Add Infowindow
              var infowindow = new google.maps.InfoWindow({
@@ -74,9 +81,12 @@
                  infowindow.open(map, marker);
              });
          });
-     });
 
-     console.log(markers);
+
+
+     });
+     setTimeout(function(){console.log(markers);}, 5000);
+
 
      // Search Box
      var input = document.getElementById('pac-input');
@@ -130,5 +140,5 @@
     //      });
     //      map.fitBounds(bounds);
     //  });
-     var mc = new MarkerClusterer(map, markers);
+    setTimeout(function(){var mc = new MarkerClusterer(map, markers);}, 5000);
  }
