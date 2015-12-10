@@ -1,4 +1,4 @@
- function initAutocomplete() {
+function initAutocomplete() {
 
      var London = new google.maps.LatLng(51.508742, -0.120850);
 
