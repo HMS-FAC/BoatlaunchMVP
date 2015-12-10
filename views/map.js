@@ -24,7 +24,7 @@ function initAutocomplete() {
                if (infowindow) {
                  infowindow.close();
                }
-              
+
                infowindow = new google.maps.InfoWindow({
                  content : utils.renderInfoContent(data, key)
                });
@@ -42,10 +42,12 @@ function initAutocomplete() {
      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
      map.addListener('bounds_changed', function() {
+         console.log("bounds_changed");
          searchBox.setBounds(map.getBounds());
      });
 
      searchBox.addListener('places_changed', function() {
+         console.log("places_changed");
          var places = searchBox.getPlaces();
 
          if (places.length === 0) {
@@ -56,6 +58,9 @@ function initAutocomplete() {
              marker.setMap(null);
          });
          markers = [];
+
+         //  https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+         map.setCenter(places[0].geometry.location)
 
          var bounds = new google.maps.LatLngBounds();
          places.forEach(function(place) {
@@ -74,6 +79,6 @@ function initAutocomplete() {
                  position: place.geometry.location
              }));
          });
-         map.fitBounds(bounds);
+         //map.fitBounds(bounds);
        });
  }
