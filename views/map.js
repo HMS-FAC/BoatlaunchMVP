@@ -15,43 +15,13 @@
              initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
              map.setCenter(initialLocation);
          }, function() {
-             handleNoGeolocation(browserSupportFlag);
+             initialLocation = new google.maps.LatLng(51.508742, -0.120850);
          });
-     }
-
-     // Browser doesn't support Geolocation
-     else {
-         browserSupportFlag = false;
-         handleNoGeolocation(browserSupportFlag);
+     } else {
+       initialLocation = new google.maps.LatLng(51.508742, -0.120850);
      }
 
      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-     function handleNoGeolocation(errorFlag) {
-         if (errorFlag === true) {
-             alert("Geolocation service failed.");
-             initialLocation = London;
-         } else {
-             alert("Your browser doesn't support geolocation. We've placed you in London.");
-             initialLocation = London;
-         }
-         map.setCenter(initialLocation);
-     }
-
-     // fetch JSON
-     function fetchJSONFile(path, callback) {
-         var httpRequest = new XMLHttpRequest();
-         httpRequest.onreadystatechange = function() {
-             if (httpRequest.readyState === 4) {
-                 if (httpRequest.status === 200) {
-                     var data = httpRequest.responseText;
-                     if (callback) callback(data);
-                 }
-             }
-         };
-         httpRequest.open('GET', path);
-         httpRequest.send();
-     }
 
      var markers = [];
 
@@ -77,7 +47,7 @@
                  infowindow.open(map, marker);
              });
          });
-         var mc = new MarkerClusterer(map, markers)
+         var mc = new MarkerClusterer(map, markers);
      });
 
      // Search Box
@@ -131,3 +101,18 @@
          map.fitBounds(bounds);
      });
  }
+
+// fetch JSON
+function fetchJSONFile(path, callback) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var data = httpRequest.responseText;
+                if (callback) callback(data);
+            }
+        }
+    };
+    httpRequest.open('GET', path);
+    httpRequest.send();
+}
