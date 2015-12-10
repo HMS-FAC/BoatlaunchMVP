@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/HMS-FAC/BoatlaunchMVP#readme",
   "dependencies": {
+    "codecov.io": "^0.1.6",
     "firebase": "^2.3.2",
     "hapi": "^11.1.2",
     "inert": "^3.2.0"
