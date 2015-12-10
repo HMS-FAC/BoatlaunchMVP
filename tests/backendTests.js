@@ -4,7 +4,7 @@ var test = require('tape');
 var fs = require('fs');
 var path = require('path');
 
-REALFIREBASE = true;
+REALFIREBASE = false;
 //Set up real and fake firebase
 // You only need the real firebase to run this once and get the data that you
 // want the fake firebase to return, without actually calling the firebase server
