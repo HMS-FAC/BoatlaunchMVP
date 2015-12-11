@@ -29,21 +29,30 @@ var myFunc = function(){
 
   document.getElementById("slipwayInfo").innerHTML =
   '<div id=info>'+'<br><br>'+
-    'Name: '                 + detailsArray[0]  +'<br><br>'+
-    'Website: '              + detailsArray[1]  +'<br><br>'+
-    'Charges: '              + detailsArray[2]  +'<br><br>'+
-    'Contact Name: '         + detailsArray[3]  +'<br><br>'+
-    'Contact Phone: '        + detailsArray[4]  +'<br><br>'+
-    'Contact Mobile: '       + detailsArray[5]  +'<br><br>'+
-    'Email: '                + detailsArray[6]  +'<br><br>'+
-    'Ramp Description: '     + detailsArray[7]  +'<br><br>'+
-    'Ramp Type: '            + detailsArray[8]  +'<br><br>'+
-    'Suitability: '          + detailsArray[9]  +'<br><br>'+
-    'Ramp Length: '          + detailsArray[10] +'<br><br>'+
-    'Facilities: '           + detailsArray[11] +'<br><br>'+
-    'Navigational Hazards: ' + detailsArray[12] +'<br><br>'+
-    'Upper Area Material: '  + detailsArray[13] +'<br><br>'+
-    'Lower Area Material: '  + detailsArray[14] +'<br><br>'+
+    '<h2>'+
+                               detailsArray[0]  +'<br>'+
+    '</h2>'+
+    '<h3>'+
+    'Contact Details '                          +'<br>'+
+    '</h3>'+
+    '<b>Website:</b> '              + detailsArray[1]  +'<br><br>'+
+    '<b>Contact Name:</b> '         + detailsArray[3]  +'<br><br>'+
+    '<b>Contact Phone:</b> '        + detailsArray[4]  +'<br><br>'+
+    '<b>Contact Mobile:</b> '       + detailsArray[5]  +'<br><br>'+
+    '<b>Email:</b> '                + detailsArray[6]  +'<br><br>'+
+    '<h3>'+
+    'Slipway Details '                          +'<br>'+
+    '</h3>'+
+    '<b>Ramp Description:</b> '     + detailsArray[7]  +'<br><br>'+
+    '<b>Ramp Type:</b> '            + detailsArray[8]  +'<br><br>'+
+    '<b>Suitability:</b> '          + detailsArray[9]  +'<br><br>'+
+    '<b>Ramp Length:</b> '          + detailsArray[10] +'<br><br>'+
+    '<b>Facilities:</b> '           + detailsArray[11] +'<br><br>'+
+    '<b>Navigational Hazards:</b> ' + detailsArray[12] +'<br><br>'+
+    '<b>Upper Area Material:</b> '  + detailsArray[13] +'<br><br>'+
+    '<b>Lower Area Material:</b> '  + detailsArray[14] +'<br><br>'+
+    '<b>Charges:</b> '              + detailsArray[2]  +'<br><br>'+
+
   '</div>';
    }
 
