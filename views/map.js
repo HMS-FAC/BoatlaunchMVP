@@ -6,21 +6,12 @@ function initAutocomplete() {
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
-     if (navigator.geolocation) {
-         browserSupportFlag = true;
-         navigator.geolocation.getCurrentPosition(function(position) {
-             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-             map.setCenter(initialLocation);
-         }, function() {
-             initialLocation = new google.maps.LatLng(51.508742, -0.120850);
-         });
-     } else {
-       initialLocation = new google.maps.LatLng(51.508742, -0.120850);
-     }
-
      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+     utils.setupInitialLocation(map);
 
-     fetchJSONFile('/data', function(data) {
+     var infowindow = null;
+
+     utils.fetchJSONFile('/data', function(data) {
          data = JSON.parse(data);
 
          Object.keys(data).forEach(function(key) {
@@ -29,28 +20,19 @@ function initAutocomplete() {
              });
              markers.push(marker);
              marker.setMap(map);
-
-             var content = '<div id="name">'+
-                           '<h3>'+data[key].Name+'</h3>'+
-                           '</div>'+
-                           '<div id="website">'+
-                           '<p hidden>'+data[key].Website+'</p>'+
-                           '</div>'+
-                           '<div id="rampDes">'+
-                           '<p hidden>'+data[key].RampDescription+'</p>'+
-                           '</div>'+
-                           '<div id="charges">'+
-                           '<p hidden>'+data[key].Charges+'</p>'+
-                           '</div>'+
-                           '<button onclick="myFunc()" type="button">More Info</button>'+
-                           '</div>';
-
-             var infowindow = new google.maps.InfoWindow({
-                 content: content
-             });
              marker.addListener('click', function() {
-                 infowindow.open(map, marker);
+               if (infowindow) {
+                 infowindow.close();
+               }
+
+               infowindow = new google.maps.InfoWindow({
+                 content : utils.renderInfoContent(data, key)
+               });
+
+               infowindow.open(map, marker);
+
              });
+
          });
          var mc = new MarkerClusterer(map, markers);
      });
@@ -60,10 +42,12 @@ function initAutocomplete() {
      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
      map.addListener('bounds_changed', function() {
+         console.log("bounds_changed");
          searchBox.setBounds(map.getBounds());
      });
 
      searchBox.addListener('places_changed', function() {
+         console.log("places_changed");
          var places = searchBox.getPlaces();
 
          if (places.length === 0) {
@@ -74,6 +58,9 @@ function initAutocomplete() {
              marker.setMap(null);
          });
          markers = [];
+
+         //  https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+         map.setCenter(places[0].geometry.location);
 
          var bounds = new google.maps.LatLngBounds();
          places.forEach(function(place) {
@@ -91,22 +78,7 @@ function initAutocomplete() {
                  title: place.name,
                  position: place.geometry.location
              }));
-
          });
-         map.fitBounds(bounds);
-     });
+         //map.fitBounds(bounds);
+       });
  }
-
-function fetchJSONFile(path, callback) {
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
-                var data = httpRequest.responseText;
-                if (callback) callback(data);
-            }
-        }
-    };
-    httpRequest.open('GET', path);
-    httpRequest.send();
-}
