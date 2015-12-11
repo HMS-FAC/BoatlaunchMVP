@@ -42,7 +42,6 @@ function initAutocomplete() {
      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
      map.addListener('bounds_changed', function() {
-         console.log("bounds_changed");
          searchBox.setBounds(map.getBounds());
      });
 
