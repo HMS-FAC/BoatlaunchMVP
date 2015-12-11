@@ -8,34 +8,16 @@
 </head>
 
 <body>
+
     <h1> Boatlaunch </h1>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="googleMap" style="width:500px;height:380px;"></div>
     <div id="slipwayInfo" style="width:500px;height:380px;"></div>
-    <button onclick="myFunc()" type="button">More Info</button>
-    <!-- <script src='./index.js' type="text/javascript"></script> doesn't contain anything at present -->
+
+    <script src='/index.js' type="text/javascript"></script>
     <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
     <script src="/util.js" type="text/javascript"></script>
     <script src="/map.js" type="text/javascript"></script>
-    <script>
-    var myFunc = function() {
-        console.log("Hello World");
-        var name = document.getElementById("name").children[0].innerHTML;
-        var website = document.getElementById("website").children[0].innerHTML;
-        var rampDes = document.getElementById("rampDes").children[0].innerHTML;
-        var charges = document.getElementById("charges").children[0].innerHTML;
-
-        //console.log(data.child);
-        document.getElementById("slipwayInfo").innerHTML =
-            '<div id=info>' + '<br><br>' +
-            'Name: ' + name + '<br><br>' +
-            'Website: ' + website + '<br><br>' +
-            'Ramp Description: ' + rampDes + '<br><br>' +
-            'Charges: ' + charges + '<br><br>' +
-
-            '</div>';
-    };
-    </script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 
