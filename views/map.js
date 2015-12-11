@@ -60,7 +60,7 @@ function initAutocomplete() {
          markers = [];
 
          //  https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
-         map.setCenter(places[0].geometry.location)
+         map.setCenter(places[0].geometry.location);
 
          var bounds = new google.maps.LatLngBounds();
          places.forEach(function(place) {
