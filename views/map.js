@@ -1,108 +1,67 @@
- function initAutocomplete() {
+function initAutocomplete() {
 
-     var London = new google.maps.LatLng(51.508742, -0.120850);
-
+     var markers = [];
      var mapProp = {
          zoom: 6,
-         center: London,
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
-     // Get current location
-     if (navigator.geolocation) {
-         browserSupportFlag = true;
-         navigator.geolocation.getCurrentPosition(function(position) {
-             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-             map.setCenter(initialLocation);
-         }, function() {
-             handleNoGeolocation(browserSupportFlag);
-         });
-     }
-
-     // Browser doesn't support Geolocation
-     else {
-         browserSupportFlag = false;
-         handleNoGeolocation(browserSupportFlag);
-     }
-
      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+     utils.setupInitialLocation(map);
 
-     function handleNoGeolocation(errorFlag) {
-         if (errorFlag === true) {
-             alert("Geolocation service failed.");
-             initialLocation = London;
-         } else {
-             alert("Your browser doesn't support geolocation. We've placed you in London.");
-             initialLocation = London;
-         }
-         map.setCenter(initialLocation);
-     }
+     var infowindow = null;
 
-     // fetch JSON
-     function fetchJSONFile(path, callback) {
-         var httpRequest = new XMLHttpRequest();
-         httpRequest.onreadystatechange = function() {
-             if (httpRequest.readyState === 4) {
-                 if (httpRequest.status === 200) {
-                     var data = httpRequest.responseText;
-                     if (callback) callback(data);
-                 }
-             }
-         };
-         httpRequest.open('GET', path);
-         httpRequest.send();
-     }
-
-     var markers = [];
-
-     fetchJSONFile('/data', function(data) {
-         // do something with your data
+     utils.fetchJSONFile('/data', function(data) {
          data = JSON.parse(data);
 
          Object.keys(data).forEach(function(key) {
-             // Adding Markers
              var marker = new google.maps.Marker({
                  position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
              });
              markers.push(marker);
-            //  markers.push(index);
              marker.setMap(map);
-
-            // Add Infowindow
-             var infowindow = new google.maps.InfoWindow({
-                 content: data[key].Name
-             });
-
              marker.addListener('click', function() {
-                 infowindow.open(map, marker);
+               if (infowindow) {
+                 infowindow.close();
+               }
+
+               infowindow = new google.maps.InfoWindow({
+                 content : utils.renderInfoContent(data, key)
+               });
+
+               infowindow.open(map, marker);
+
              });
+
          });
          var mc = new MarkerClusterer(map, markers);
      });
 
-     // Search Box
      var input = document.getElementById('pac-input');
      var searchBox = new google.maps.places.SearchBox(input);
      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
      map.addListener('bounds_changed', function() {
+         console.log("bounds_changed");
          searchBox.setBounds(map.getBounds());
      });
 
      searchBox.addListener('places_changed', function() {
+         console.log("places_changed");
          var places = searchBox.getPlaces();
 
          if (places.length === 0) {
              return;
          }
 
-         // Clear out the old markers.
          markers.forEach(function(marker) {
              marker.setMap(null);
          });
          markers = [];
 
-         // For each place, get the icon, name and location.
+         //  https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+         map.setCenter(places[0].geometry.location);
+
          var bounds = new google.maps.LatLngBounds();
          places.forEach(function(place) {
              var icon = {
@@ -113,21 +72,13 @@
                  scaledSize: new google.maps.Size(25, 25)
              };
 
-             // Create a marker for each place.
              markers.push(new google.maps.Marker({
                  map: map,
                  icon: icon,
                  title: place.name,
                  position: place.geometry.location
              }));
-
-             if (place.geometry.viewport) {
-                 // Only geocodes have viewport.
-                 bounds.union(place.geometry.viewport);
-             } else {
-                 bounds.extend(place.geometry.location);
-             }
          });
-         map.fitBounds(bounds);
-     });
+         //map.fitBounds(bounds);
+       });
  }
