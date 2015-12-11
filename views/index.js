@@ -46,4 +46,5 @@ var myFunc = function(){
     'Lower Area Material: '  + detailsArray[14] +'<br><br>'+
   '</div>';
    }
+
 };
