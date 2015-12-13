@@ -75,16 +75,7 @@ utils = {
                 '<p hidden>'+data[key].NavigationalHazards+'</p>'+
               '</div>'+
               '<button onclick="myFunc()" type="button">More Info</button>'+
-<<<<<<< HEAD
               '</div>';
-  },
-
-  googleMapVersion : function(){
-    console.log(google.maps.version);
-    return google.maps.version;
-=======
-            '</div>';
->>>>>>> master
   }
 
 };
