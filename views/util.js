@@ -43,6 +43,11 @@ utils = {
               '</div>'+
               '<button onclick="myFunc()" type="button">More Info</button>'+
               '</div>';
+  },
+
+  googleMapVersion : function(){
+    console.log(google.maps.version);
+    return google.maps.version;
   }
 
 };
