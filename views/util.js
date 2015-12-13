@@ -75,7 +75,7 @@ utils = {
                 '<p hidden>'+data[key].NavigationalHazards+'</p>'+
               '</div>'+
               '<button onclick="myFunc()" type="button">More Info</button>'+
-              '</div>';
+              '</div>'; 
   }
 
 };
