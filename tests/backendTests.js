@@ -4,11 +4,11 @@ var test = require('tape');
 var fs = require('fs');
 var path = require('path');
 
-REALFIREBASE = false;
+ var REAL_FIREBASE = true;
 //Set up real and fake firebase
 // You only need the real firebase to run this once and get the data that you
 // want the fake firebase to return, without actually calling the firebase server
-if (REALFIREBASE) {
+if (REAL_FIREBASE) {
     var FirebSlipwayArray = new Firebase(
         'https://crackling-inferno-1794.firebaseio.com/'
     );
@@ -39,10 +39,11 @@ test ('test the test: 1+1=2', function(t){
   t.end();
 });
 
-test ('test if dataFWrapper creates a JSON file', function(t){
+test ('test DBObj is an object which is not empty', function(t){
   newJSON = false;
-  dataFunctions.WrapperFunc(FirebSlipwayArray, function(){
-    console.log('--->>>>>JSON build done');
+  dataFunctions.createDbObj(FirebSlipwayArray, function(){
+
+
       fs.readFile(path.resolve('lib/data/data.json'), function(err){ if(err) {
         console.log(err);
       }

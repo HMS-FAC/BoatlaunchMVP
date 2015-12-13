@@ -1,4 +1,4 @@
-function initAutocomplete() {
+function createMapWithSlipways(slipways) {
 
      var markers = [];
      var mapProp = {
@@ -11,12 +11,9 @@ function initAutocomplete() {
 
      var infowindow = null;
 
-     utils.fetchJSONFile('/data', function(data) {
-         data = JSON.parse(data);
-
-         Object.keys(data).forEach(function(key) {
+         Object.keys(slipways).forEach(function(key) {
              var marker = new google.maps.Marker({
-                 position: new google.maps.LatLng(Number(data[key].latitude), Number(data[key].longitude))
+                 position: new google.maps.LatLng(Number(slipways[key].latitude), Number(slipways[key].longitude))
              });
              markers.push(marker);
              marker.setMap(map);
@@ -26,7 +23,7 @@ function initAutocomplete() {
                }
 
                infowindow = new google.maps.InfoWindow({
-                 content : utils.renderInfoContent(data, key)
+                 content : utils.renderInfoContent(slipways, key)
                });
 
                infowindow.open(map, marker);
@@ -35,7 +32,6 @@ function initAutocomplete() {
 
          });
          var mc = new MarkerClusterer(map, markers);
-     });
 
      var input = document.getElementById('pac-input');
      var searchBox = new google.maps.places.SearchBox(input);
