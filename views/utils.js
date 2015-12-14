@@ -1,13 +1,12 @@
 utils = {
   fetchRemoteSlipways: function(callback) {
 
-    var firebaseSlipwayArray = new Firebase(
+    firebaseSlipwayArray = new Firebase(
       'https://crackling-inferno-1794.firebaseio.com/'
     );
     firebaseSlipwayArray.on('value', function(snapshot) {
       return callback(snapshot.val());
     });
-
   },
   transformSlipways: function(remoteSlipways) {
     localSlipwayObj = {};
@@ -157,9 +156,6 @@ utils = {
       '<h4>'+
       '<b>Name:</b> '                 +'<input type="text" name="Name" value='             +Name+               '><br><br>'+
       '</h4>'+
-      '<b>Longitude:</b> '            +'<input type="Longitude" name="Longitude">                                 <br><br>'+
-      '<b>Latitude:</b> '             +'<input type="Latitude" name="Latitude">                                   <br><br>'+
-
       '<h3>'+
       'Contact Details '                     +'<br>'+
       '</h3>'+
@@ -211,10 +207,12 @@ utils = {
     '</div>';
   },addNewSlipway: function(){
     document.getElementById("slipwayInfo").innerHTML =
-    '<button onclick="utils.submitSlipwayDetails()" type="button">Submit Slipway Details</button>' +
+
+    '<form>'+
+    '<button onclick="utils.submitNewSlipwayDetails()" type="button">Submit Slipway Details</button>' +
     '<div id=info><br><br>'+
       '<h4>'+
-      '<b>Name:</b> '                 +'<input type="text" name="Name"                                           ><br><br>'+
+      '<b>Name:</b> '                 +'<input type="text" id="Name"                                           ><br><br>'+
       '</h4>'+
       '<b>Longitude:</b> '            +'<input type="Longitude" name="Longitude">                                 <br><br>'+
       '<b>Latitude:</b> '             +'<input type="Latitude" name="Latitude">                                   <br><br>'+
@@ -266,8 +264,15 @@ utils = {
                                           '<option value="Harbour">Harbour</option>'+
                                           '<option value="Concrete">Concrete</option>'+
                                        '</select>'+                                                               '><br><br>'+
-      '<b>Charges:</b> '              +'<input type="text" name="Charges"                                          ><br><br>'+
-    '</div>';
+      '<b>Charges:</b>'               +'<input type="text" name="Charges"                                          ><br><br>'+
+    '</div>'+
+    '</form>';
+  },
+  submitNewSlipwayDetails: function(data){
+    var keyRoute = new Firebase('https://crackling-inferno-1794.firebaseio.com/'+Date.now());
+    var nameInput = document.getElementById('Name').value;
+
+    keyRoute.set([nameInput,,,"Huwbert"]);
   },
   setupInitialLocation: function(map) {
     if (navigator.geolocation) {
