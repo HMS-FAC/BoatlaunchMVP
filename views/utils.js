@@ -11,7 +11,8 @@ utils = {
   },
   transformSlipways: function(remoteSlipways) {
     localSlipwayObj = {};
-    for (var slipwayKey in remoteSlipways) {
+    var slipwayKey;
+    for (slipwayKey in remoteSlipways) {
       if (remoteSlipways.hasOwnProperty(slipwayKey)) {
         localSlipwayObj[slipwayKey] = utils.transformSlipway(remoteSlipways[slipwayKey]);
       }
