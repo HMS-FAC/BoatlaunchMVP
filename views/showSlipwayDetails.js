@@ -1,20 +1,20 @@
 function showSlipwayDetails(DbObj) {
    key = document.getElementById("key").innerHTML;
-   Name                = "Unknown";
-   Website             = "Unknown";
-   PersonName          = "Unknown";
-   PhoneNumber         = "Unknown";
-   MobilePhoneNumber   = "Unknown";
-   Email               = "Unknown";
-   RampDescription     = "Unknown";
-   RampType            = "Unknown";
-   Suitability         = "Unknown";
-   RampLength          = "Unknown";
-   Facilities          = "Unknown";
-   NavigationalHazards = "Unknown";
-   UpperArea           = "Unknown";
-   LowerArea           = "Unknown";
-   Charges             = "Unknown";
+   Name                = "";
+   Website             = "";
+   PersonName          = "";
+   PhoneNumber         = "";
+   MobilePhoneNumber   = "";
+   Email               = "";
+   RampDescription     = "";
+   RampType            = "";
+   Suitability         = "";
+   RampLength          = "";
+   Facilities          = "";
+   NavigationalHazards = "";
+   UpperArea           = "";
+   LowerArea           = "";
+   Charges             = "";
 
   if (typeof localSlipwayObj[key].Name !== "undefined"){
     Name = localSlipwayObj[key].Name;
