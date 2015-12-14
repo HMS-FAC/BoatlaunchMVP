@@ -28,6 +28,7 @@ utils = {
   },
 
   renderInfoContent: function(data, key){
+    console.log('hello test');
     return '<div id="name">'+
               '<h3>'+data[key].Name+'</h3>'+
             '</div>'+
@@ -74,7 +75,7 @@ utils = {
                 '<p hidden>'+data[key].NavigationalHazards+'</p>'+
               '</div>'+
               '<button onclick="myFunc()" type="button">More Info</button>'+
-            '</div>';
+              '</div>'; 
   }
 
 };
