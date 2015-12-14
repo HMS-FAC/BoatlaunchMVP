@@ -7,6 +7,7 @@ function createMapWithSlipways(slipways) {
      };
 
      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+     
      utils.setupInitialLocation(map);
 
      var infowindow = null;
