@@ -2,7 +2,7 @@ function addNewSlipway(){
   document.getElementById("slipwayInfo").innerHTML =
 
   '<form>'+
-  '<button onclick="utils.submitNewSlipwayDetails()" type="button">Submit Slipway Details</button>' +
+  '<button onclick="submitNewSlipwayDetails()" type="button">Submit Slipway Details</button>' +
   '<div id=info><br><br>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name"                                           ><br><br>'+
