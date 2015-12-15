@@ -64,7 +64,7 @@ function showSlipwayDetails(DbObj) {
 
 
   document.getElementById("slipwayInfo").innerHTML =
-  '<button onclick="editSlipwayDetails()" type="button">Edit Slipway Details</button>' +
+  '<button onclick="showEditSlipwayForm()" type="button">Edit Slipway Details</button>' +
   '<div id=info><br><br>'+
     '<h2>'+
                                       Name                +'<br>'+
