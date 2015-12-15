@@ -12,15 +12,16 @@
     <h1>Boatlaunch</h1>
     <button onclick="addNewSlipway()" type="button">Add New Slipway</button>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="mapLoading" 
+    style="width:500px;height:380px;background-image: url('https://cdn.css-tricks.com/wp-content/uploads/2007/09/csspageloadexample.png'); background-repeat: no-repeat;background-position:center;";>
     <div id="googleMap" style="width:500px;height:380px;"></div>
+    </div>
     <div id="slipwayInfo" style="width:500px;height:380px;"></div>
     <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
     <script src="/utils.js" type="text/javascript"></script>
     <script src="/map.js" type="text/javascript"></script>
     <script src="/main.js" type="text/javascript"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=boom" defer></script> 
-    
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places" defer></script>
     <script src="/showSlipwayDetails.js" type="text/javascript"></script>
     <script src="/addNewSlipway.js" type="text/javascript"></script>
     <script src="/editSlipwayDetails.js" type="text/javascript"></script>
