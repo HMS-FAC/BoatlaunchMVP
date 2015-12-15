@@ -1,4 +1,4 @@
-function editSlipwayDetails(){
+function showEditSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
   '<button onclick="submitSlipwayDetails()" type="button">Submit Slipway Details</button>' +
   '<div id=info><br><br>'+
