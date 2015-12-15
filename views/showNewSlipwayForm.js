@@ -1,4 +1,4 @@
-function addNewSlipway(){
+function showNewSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
 
   '<form>'+

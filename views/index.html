@@ -25,9 +25,6 @@
 
           <link href="/static/bootstrap-switch.css" rel="stylesheet">
           <script src="/static/bootstrap-switch.js"></script>
-          <!--multiselect gadget
-          <script type="text/javascript" src="/static/bootstrap-multiselect.js"></script>
-          <link rel="stylesheet" href="/static/bootstrap-multiselect.css" type="text/css"/>-->
 
         <div class="col-xs-2">
           <input id="pac-input" class="controls" type="text" placeholder="Search Box">
@@ -53,18 +50,21 @@
         <div id="googleMap" style="width:500px;height:380px;"></div>
         <div id="slipwayInfo" style="width:500px;height:380px;"></div>
     </div>
+    <div id="mapLoading"
+    style="width:500px;height:380px;background-image: url('/ajax-loader.gif'); background-repeat: no-repeat;background-position:center;";>
 
     <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
     <script src="/utils.js" type="text/javascript"></script>
-    <script src="/main.js" type="text/javascript"></script>
     <script src="/map.js" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete" defer></script>
+    <script src="/main.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places" defer></script>
     <script src="/showSlipwayDetails.js" type="text/javascript"></script>
-    <script src="/addNewSlipway.js" type="text/javascript"></script>
-    <script src="/editSlipwayDetails.js" type="text/javascript"></script>
+    <script src="/showNewSlipwayForm.js" type="text/javascript"></script>
+    <script src="/showEditSlipwayForm.js" type="text/javascript"></script>
     <script src="/submitNewSlipwayDetails.js" type="text/javascript"></script>
     <script src="/submitSlipwayDetails.js" type="text/javascript"></script>
     <script src="/filterSlipways.js" type="text/javascript"></script>
 </body>
 
 </html>
+https://cdn.css-tricks.com/wp-content/uploads/2007/09/csspageloadexample.png
