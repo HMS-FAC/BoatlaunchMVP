@@ -24,8 +24,9 @@ $(document).ready(function(){
       // small, large and unknown
       if($('#small').is(':checked')) {
         markers.forEach(function(e) {
-          if(e.__filtervalue.Suitability !== 'Small trailer can be pushed' ||
-            e.__filtervalue.Suitability !== 'Large trailer needs a car' ||
+          e.setVisible(true);
+          if(e.__filtervalue.Suitability !== 'Small trailer can be pushed' &&
+            e.__filtervalue.Suitability !== 'Large trailer needs a car' &&
             e.__filtervalue.Suitability !== 'Unknown'){
               e.setVisible(false);
           }
@@ -35,7 +36,8 @@ $(document).ready(function(){
       //large and unknown
       if($('#large').is(':checked')) {
         markers.forEach(function(e) {
-          if(e.__filtervalue.Suitability !== 'Large trailer needs a car' ||
+          e.setVisible(true);
+          if(e.__filtervalue.Suitability !== 'Large trailer needs a car' &&
             e.__filtervalue.Suitability !== 'Unknown'){
               e.setVisible(false);
           }
@@ -48,6 +50,7 @@ $(document).ready(function(){
       //every slipway except unknown
       if($('#portable').is(':checked')) {
         markers.forEach(function(e) {
+          e.setVisible(true);
           if(e.__filtervalue.Suitability === 'Unknown') {
             e.setVisible(false);
           }
@@ -57,7 +60,8 @@ $(document).ready(function(){
       //only small and large
       if($('#small').is(':checked')) {
         markers.forEach(function(e) {
-          if(e.__filtervalue.Suitability !== 'Small trailer can be pushed' ||
+          e.setVisible(true);
+          if(e.__filtervalue.Suitability !== 'Small trailer can be pushed' &&
             e.__filtervalue.Suitability !== 'Large trailer needs a car'){
               e.setVisible(false);
           }
@@ -67,6 +71,7 @@ $(document).ready(function(){
       //only large
       if($('#large').is(':checked')) {
         markers.forEach(function(e) {
+          e.setVisible(true);
           if(e.__filtervalue.Suitability !== 'Large trailer needs a car') {
             e.setVisible(false);
           }
