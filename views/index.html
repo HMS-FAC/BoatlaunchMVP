@@ -45,7 +45,7 @@
             <li><input type="radio" id="large" name="large" value="large">Large trailer needs a car</li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Show unknown slipways<input type="checkbox" name="unknown-slipways"></a></li>
-            <li><a href="#" class="btn btn-primary btn-lg btn-sm active" role="button">Filter</a></li>
+            <li><a href="#" id="submit-filter" class="btn btn-primary btn-lg btn-sm active" role="button">Filter</a></li>
           </ul>
         </div>
       </div>
@@ -64,21 +64,7 @@
     <script src="/editSlipwayDetails.js" type="text/javascript"></script>
     <script src="/submitNewSlipwayDetails.js" type="text/javascript"></script>
     <script src="/submitSlipwayDetails.js" type="text/javascript"></script>
-<!-- Initialize the plugin: -->
-<script type="text/javascript">
-
-    $.fn.bootstrapSwitch.defaults.inverse = true;
-    $.fn.bootstrapSwitch.defaults.size = 'mini';
-    $.fn.bootstrapSwitch.defaults.onColor = 'warning';
-    $("[name='unknown-slipways']").bootstrapSwitch();
-
-    // $(".dropdown-menu li a").click(function(){
-    //   $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-    //   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-    // });
-
-
-</script>
+    <script src="/filterSlipways.js" type="text/javascript"></script>
 </body>
 
 </html>
