@@ -10,11 +10,12 @@ $(document).ready(function(){
   //   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
   // });
 
+
+
   $("#submit-filter").click(function(){
-    var name = '';
-    if ($("#Portable").is(":checked")) {
-      console.log('inside');
-    }
+
+    if($('#portable').is(':checked')) { alert("it's checked"); }
+
     console.log('name');
   });
 
