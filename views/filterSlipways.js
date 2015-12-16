@@ -2,9 +2,10 @@ $(document).ready(function(){
 
   $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
         e.stopPropagation();
-    }); 
+    });
 
-  $.fn.bootstrapSwitch.defaults.inverse = true;
+  $.fn.bootstrapSwitch.defaults.inverse = false;
+  $.fn.bootstrapSwitch.defaults.state = true;
   $.fn.bootstrapSwitch.defaults.size = 'mini';
   $.fn.bootstrapSwitch.defaults.onColor = 'warning';
   $("[name='unknown-slipways']").bootstrapSwitch();
