@@ -6,6 +6,8 @@ function showSlipwayDetails(DbObj) {
    PhoneNumber         = "";
    MobilePhoneNumber   = "";
    Email               = "";
+   Latitude            = "";
+   Longitude           = "";
    RampDescription     = "";
    RampType            = "";
    Suitability         = "";
@@ -33,6 +35,12 @@ function showSlipwayDetails(DbObj) {
   }
   if (typeof localSlipwayObj[key].Email !== "undefined"){
     Email = localSlipwayObj[key].Email;
+  }
+  if (typeof localSlipwayObj[key].Latitude !== "undefined"){
+    Latitude = localSlipwayObj[key].Latitude;
+  }
+  if (typeof localSlipwayObj[key].Longitude !== "undefined"){
+    Longitude = localSlipwayObj[key].Longitude;
   }
   if (typeof localSlipwayObj[key].RampDescription !== "undefined"){
     RampDescription = localSlipwayObj[key].RampDescription;
@@ -80,6 +88,8 @@ function showSlipwayDetails(DbObj) {
     '<h3>'+
     'Slipway Details '                                    +'<br>'+
     '</h3>'+
+    '<br>Latitude</b>'              + Latitude            +'<br><br>'    +
+    '<br>Longitude</br>'            + Longitude           +'<br><br>'    +
     '<b>Ramp Description:</b> '     + RampDescription     +'<br><br>'+
     '<b>Ramp Type:</b> '            + RampType            +'<br><br>'+
     '<b>Suitable for:</b> '         + Suitability         +'<br><br>'+
