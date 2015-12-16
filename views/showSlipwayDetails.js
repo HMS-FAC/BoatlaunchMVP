@@ -88,8 +88,8 @@ function showSlipwayDetails(DbObj) {
     '<h3>'+
     'Slipway Details '                                    +'<br>'+
     '</h3>'+
-    '<br>Latitude</b>'              + Latitude            +'<br><br>'    +
-    '<br>Longitude</br>'            + Longitude           +'<br><br>'    +
+    '<b>Latitude</b>'               + Latitude            +'<br><br>'+
+    '<b>Longitude</b>'              + Longitude           +'<br><br>'+
     '<b>Ramp Description:</b> '     + RampDescription     +'<br><br>'+
     '<b>Ramp Type:</b> '            + RampType            +'<br><br>'+
     '<b>Suitable for:</b> '         + Suitability         +'<br><br>'+
