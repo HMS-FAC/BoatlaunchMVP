@@ -39,6 +39,9 @@ function submitNewSlipwayDetails(data) {
         nameInput,
         longInput,
         latInput,
+                , // Nearest place
+                , // Country
+                , // Region
         websiteInput,
         personInput,
         phoneNumberInput,

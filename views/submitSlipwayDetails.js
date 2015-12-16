@@ -1,5 +1,5 @@
 function submitSlipwayDetails() {
-   
+
     var idKey = key;
     var keyRoute = new Firebase('https://crackling-inferno-1794.firebaseio.com/' + idKey);
     var nameInput = document.getElementById('Name').value,
@@ -38,12 +38,17 @@ function submitSlipwayDetails() {
         nameInput,
         localSlipwayObj[key].longitude,
         localSlipwayObj[key].latitude,
+                , // Nearest place
+                , // Country
+                , // Region
         websiteInput,
         personInput,
         phoneNumberInput,
         mobilePhoneInput,
+                  , // Fax
         emailInput,
         rampDescInput,
+                    , // Directions
         rampTypeInput,
         upperAreaMaterialInput,
         lowerAreaMaterialInput,
@@ -51,7 +56,8 @@ function submitSlipwayDetails() {
         rampLengthInput,
         facilitiesInput,
         chargesInput,
-        navHazInput
-
+                    , // CruisingArea
+        navHazInput,
+                      // Images
     ],onComplete);
 }
