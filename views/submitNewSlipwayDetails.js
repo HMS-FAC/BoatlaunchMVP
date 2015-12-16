@@ -35,6 +35,7 @@ function submitNewSlipwayDetails(data) {
     };
 
      keyRoute.set([
+       // empty array elements are necessary for Database format
         idKey,
         nameInput,
         longInput,
