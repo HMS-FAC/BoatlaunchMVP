@@ -20,20 +20,21 @@ function submitNewSlipwayDetails(data) {
         chargesInput = document.getElementById('Charges').value;
 
 
+    var slipwayInfo = document.getElementById("slipwayInfo");
 
     var onComplete = function(error) {
         if (error) {
-            console.log('Synchronization failed');
+     
+            alert('Failure, unfortunately there was an error');
         } else {
-            console.log('Synchronization succeeded');
+            slipwayInfo.innerHTML ='';
+            slipwayInfo.innerHTML = '<div><h3>Success! your slipway has been added to the datbase</h3></div><a type="button" href="/">return</a>';
+
+            console.log('Success, your slipway has been added to the database');
         }
     };
 
-
-
-
-
-    keyRoute.set([
+     keyRoute.set([
         idKey,
         nameInput,
         longInput,

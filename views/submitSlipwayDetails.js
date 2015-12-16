@@ -1,7 +1,5 @@
 function submitSlipwayDetails() {
-    console.log("KEYOBJ-------->>>>>>>>", localSlipwayObj[key].latitude);
-    console.log("LONG-------->>>>>>>>", localSlipwayObj[key].longitude);
-
+   
     var idKey = key;
     var keyRoute = new Firebase('https://crackling-inferno-1794.firebaseio.com/' + idKey);
     var nameInput = document.getElementById('Name').value,
@@ -21,14 +19,18 @@ function submitSlipwayDetails() {
         chargesInput = document.getElementById('Charges').value;
 
 
+
     var onComplete = function(error) {
         if (error) {
-            console.log('Synchronization failed');
+
+            alert('Failure, unfortunately there was an error');
         } else {
-            console.log('Synchronization succeeded');
+            slipwayInfo.innerHTML ='';
+            slipwayInfo.innerHTML = '<div> <h3>Success! your slipway has been added to the datbase</h3></div><a type="button" href="/">return</a>';
+
+            console.log('Success, your slipway has been added to the database');
         }
     };
-
 
 
     keyRoute.set([
@@ -51,5 +53,5 @@ function submitSlipwayDetails() {
         chargesInput,
         navHazInput
 
-    ], onComplete);
+    ],onComplete);
 }
