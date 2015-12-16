@@ -20,6 +20,12 @@ function createMapWithSlipways(slipways) {
                  __filtervalue: {Suitability: slipways[key].Suitability}
              });
 
+             if (slipways[key].Suitability === 'Unknown') {
+               marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+             } else {
+              marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+             }
+
              markers.push(marker);
              marker.setMap(map);
              marker.addListener('click', function() {
