@@ -2,7 +2,6 @@ function addNewSlipway(){
   document.getElementById("slipwayInfo").innerHTML =
 
   '<form>'+
-  '<button onclick="submitNewSlipwayDetails()" type="button">Submit Slipway Details</button>' +
   '<div id=info><br><br>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name"                                           ><br><br>'+
@@ -59,5 +58,6 @@ function addNewSlipway(){
                                      '</select>'+                                                               '><br><br>'+
     '<b>Charges:</b>'               +'<input type="text" id="Charges"                                          ><br><br>'+
   '</div>'+
+   '<button onclick="submitNewSlipwayDetails()" type="button">Submit Slipway Details</button>' +
   '</form>';
 }
