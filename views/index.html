@@ -17,49 +17,50 @@
 
 <body>
     <div>
-        <h1>Boatlaunch</h1>
-        <div>
-            <div  id="addButton">
+       
+        <header>
+            <p id="title">Boatlaunch</p>
+            <div id="addButton">
                 <button onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
             </div>
             <div class="dropdownButton">
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by Suitability
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right noclose" aria-labelledby="dropdownMenu1">
                     <div class="btn-group" data-toggle="buttons">
                         <li>
-                            <label class="btn btn-default btn-block">
+                            <label class="btn-default btn-block">
                                 <input type="radio" id="portable" name="radio" value="portable" checked /> Portable (all slipways)
                             </label>
                         </li>
                         <li>
-                            <label class="btn btn-default btn-block">
+                            <label class="btn-default btn-block">
                                 <input type="radio" id="small" name="radio" value="small" /> Small trailer can be pushed
                             </label>
                         </li>
                         <li>
-                            <label class="btn btn-default btn-block">
+                            <label class="btn-default btn-block">
                                 <input type="radio" id="large" name="radio" value="large" /> Large trailer needs a car
                             </label>
                         </li>
                     </div>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Show unknown slipways<input type="checkbox" id="unknown-slipways" name="unknown-slipways" checked></a></li>
+                    <li><a href="#">Show unknown slipways  <input type="checkbox" id="unknown-slipways" name="unknown-slipways" checked></a></li>
                     <li><a href="#" id="submit-filter" class="btn btn-primary btn-lg btn-sm active" role="button">Filter</a></li>
                 </ul>
             </div>
-        </div>
+        </header>
         <div id="mapLoading">
             <div id="googleMap"></div>
-            </div>
+        </div>
         <br>
         <div id="searchBox">
             <input id="pac-input" class="controls" type="text" placeholder="Search location">
         </div>
         <br>
-         <div id="slipwayInfo"></div>
+        <div id="slipwayInfo"></div>
         <script src="/static/markerclusterer.min.js"></script>
         <script src="/utils.js" type="text/javascript"></script>
         <script src="/map.js" type="text/javascript"></script>
