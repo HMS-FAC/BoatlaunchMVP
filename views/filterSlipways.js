@@ -1,14 +1,13 @@
 $(document).ready(function(){
 
+  $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
+        e.stopPropagation();
+    }); 
+
   $.fn.bootstrapSwitch.defaults.inverse = true;
   $.fn.bootstrapSwitch.defaults.size = 'mini';
   $.fn.bootstrapSwitch.defaults.onColor = 'warning';
   $("[name='unknown-slipways']").bootstrapSwitch();
-
-  // $(".dropdown-menu li a").click(function(){
-  //   $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-  //   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
-  // });
 
 
   $("#submit-filter").click(function(){

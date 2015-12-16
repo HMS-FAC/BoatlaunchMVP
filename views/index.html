@@ -32,14 +32,24 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right noclose" aria-labelledby="dropdownMenu1">
+                   <div class="btn-group" data-toggle="buttons">
 
                       <li>
-                          <input type="radio" id="portable" name="radio" value="portable">Portable</li>
+                       <label class="btn btn-default btn-block">
+                         <input type="radio" id="portable" name="radio" value="portable"/> Portable
+                       </label>
+                      </li>
                       <li>
-                          <input type="radio" id="small" name="radio" value="small">Small trailer can be pushed</li>
+                        <label class="btn btn-default btn-block">
+                          <input type="radio" id="small" name="radio" value="small"/> Small trailer can be pushed
+                        </label>
+                      </li>
                       <li>
-                          <input type="radio" id="large" name="radio" value="large">Large trailer needs a car</li>
-
+                        <label class="btn btn-default btn-block">
+                          <input type="radio" id="large" name="radio" value="large"/> Large trailer needs a car
+                        </label>
+                      </li>
+                    </div>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">Show unknown slipways<input type="checkbox" id="unknown-slipways" name="unknown-slipways"></a></li>
                     <li><a href="#" id="submit-filter" class="btn btn-primary btn-lg btn-sm active" role="button">Filter</a></li>
