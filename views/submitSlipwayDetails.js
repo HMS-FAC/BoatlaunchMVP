@@ -26,7 +26,7 @@ function submitSlipwayDetails() {
             alert('Failure, unfortunately there was an error');
         } else {
             slipwayInfo.innerHTML ='';
-            slipwayInfo.innerHTML = '<div> <h3>Success! your slipway has been added to the datbase</h3></div><a type="button" href="/">return</a>';
+            slipwayInfo.innerHTML = '<div> <h3>Success! your slipway has been added to the datbase</h3></div>';
 
             console.log('Success, your slipway has been added to the database');
         }
