@@ -1,12 +1,14 @@
 function createMapWithSlipways(slipways) {
 
-     var markers = [];
+    //TODO remove global
+     markers = [];
      var mapProp = {
          zoom: 6,
          mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
-     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+     //TODO remove global
+     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
      utils.setupInitialLocation(map);
 
@@ -14,8 +16,10 @@ function createMapWithSlipways(slipways) {
 
          Object.keys(slipways).forEach(function(key) {
              var marker = new google.maps.Marker({
-                 position: new google.maps.LatLng(Number(slipways[key].latitude), Number(slipways[key].longitude))
+                 position: new google.maps.LatLng(Number(slipways[key].latitude), Number(slipways[key].longitude)),
+                 __filtervalue: {Suitability: slipways[key].Suitability}
              });
+
              markers.push(marker);
              marker.setMap(map);
              marker.addListener('click', function() {
@@ -32,11 +36,12 @@ function createMapWithSlipways(slipways) {
              });
 
          });
-         var mc = new MarkerClusterer(map, markers);
+
+         mc = new MarkerClusterer(map, markers);
+         mc.setIgnoreHidden(true);
 
      var input = document.getElementById('pac-input');
      var searchBox = new google.maps.places.SearchBox(input);
-     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
      map.addListener('bounds_changed', function() {
          searchBox.setBounds(map.getBounds());
