@@ -24,7 +24,7 @@ function submitNewSlipwayDetails(data) {
 
     var onComplete = function(error) {
         if (error) {
-     
+
             alert('Failure, unfortunately there was an error');
         } else {
             slipwayInfo.innerHTML ='';
@@ -39,14 +39,17 @@ function submitNewSlipwayDetails(data) {
         nameInput,
         longInput,
         latInput,
+                , // Nearest place
+                , // Country
+                , // Region
         websiteInput,
         personInput,
         phoneNumberInput,
         mobilePhoneInput,
-        // Fax
+                  , // Fax
         emailInput,
         rampDescInput,
-        // Directions
+                    , // Directions
         rampTypeInput,
         upperAreaMaterialInput,
         lowerAreaMaterialInput,
@@ -54,8 +57,8 @@ function submitNewSlipwayDetails(data) {
         rampLengthInput,
         facilitiesInput,
         chargesInput,
-        // CruisingArea
-        navHazInput
-        // Images
+                    , // CruisingArea
+        navHazInput,
+                      // Images
     ], onComplete);
 }
