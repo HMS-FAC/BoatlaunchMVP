@@ -6,8 +6,8 @@ function showSlipwayDetails(DbObj) {
    PhoneNumber         = "";
    MobilePhoneNumber   = "";
    Email               = "";
-   Latitude            = "";
-   Longitude           = "";
+   latitude            = "";
+   longitude           = "";
    RampDescription     = "";
    RampType            = "";
    Suitability         = "";
@@ -36,11 +36,11 @@ function showSlipwayDetails(DbObj) {
   if (typeof localSlipwayObj[key].Email !== "undefined"){
     Email = localSlipwayObj[key].Email;
   }
-  if (typeof localSlipwayObj[key].Latitude !== "undefined"){
-    Latitude = localSlipwayObj[key].Latitude;
+  if (typeof localSlipwayObj[key].latitude !== "undefined"){
+    Latitude = localSlipwayObj[key].latitude;
   }
-  if (typeof localSlipwayObj[key].Longitude !== "undefined"){
-    Longitude = localSlipwayObj[key].Longitude;
+  if (typeof localSlipwayObj[key].longitude !== "undefined"){
+    Longitude = localSlipwayObj[key].longitude;
   }
   if (typeof localSlipwayObj[key].RampDescription !== "undefined"){
     RampDescription = localSlipwayObj[key].RampDescription;
@@ -88,8 +88,8 @@ function showSlipwayDetails(DbObj) {
     '<h3>'+
     'Slipway Details '                                    +'<br>'+
     '</h3>'+
-    '<b>Latitude</b>'               + Latitude            +'<br><br>'+
-    '<b>Longitude</b>'              + Longitude           +'<br><br>'+
+    '<b>Latitude:</b> '             + Latitude            +'<br><br>'+
+    '<b>Longitude:</b> '            + Longitude           +'<br><br>'+
     '<b>Ramp Description:</b> '     + RampDescription     +'<br><br>'+
     '<b>Ramp Type:</b> '            + RampType            +'<br><br>'+
     '<b>Suitable for:</b> '         + Suitability         +'<br><br>'+
