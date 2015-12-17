@@ -5,50 +5,47 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap and jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <link href="/static/bootstrap-switch.css" rel="stylesheet">
+    <link href="/custom.css" rel="stylesheet">
+    <script src="/static/bootstrap-switch.js"></script>
     <title>Boatlaunch</title>
 </head>
 
 <body>
-
     <div class="container">
         <h1>Boatlaunch</h1>
-        <div class="row">
-            <div class="col-xs-2">
+        <div>
+            <div class="col-xs-2 dropdown">
                 <button onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
             </div>
-            <!-- bootstrap and jQuery -->
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-            <link href="/static/bootstrap-switch.css" rel="stylesheet">
-            <script src="/static/bootstrap-switch.js"></script>
-
             <div class="col-xs-2">
-                <input id="pac-input" class="controls" type="text" placeholder="Search location">
             </div>
-            <div class="col-xs-1 dropdown">
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <div class=" dropdownButton">
+                <button class="btn btn-default btn-sm dropdown-toggle dropdownButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by Suitability
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right noclose" aria-labelledby="dropdownMenu1">
-                   <div class="btn-group" data-toggle="buttons">
-
-                      <li>
-                       <label class="btn btn-default btn-block">
-                         <input type="radio" id="portable" name="radio" value="portable" checked /> Portable (all slipways)
-                       </label>
-                      </li>
-                      <li>
-                        <label class="btn btn-default btn-block">
-                          <input type="radio" id="small" name="radio" value="small"/> Small trailer can be pushed
-                        </label>
-                      </li>
-                      <li>
-                        <label class="btn btn-default btn-block">
-                          <input type="radio" id="large" name="radio" value="large"/> Large trailer needs a car
-                        </label>
-                      </li>
+                    <div class="btn-group" data-toggle="buttons">
+                        <li>
+                            <label class="btn-default btn-block">
+                                <input type="radio" id="portable" name="radio" value="portable" checked /> Portable (all slipways)
+                            </label>
+                        </li>
+                        <li>
+                            <label class="btn-default btn-block">
+                                <input type="radio" id="small" name="radio" value="small" /> Small trailer can be pushed
+                            </label>
+                        </li>
+                        <li>
+                            <label class="btn-default btn-block">
+                                <input type="radio" id="large" name="radio" value="large" /> Large trailer needs a car
+                            </label>
+                        </li>
                     </div>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">Show unknown slipways<input type="checkbox" id="unknown-slipways" name="unknown-slipways" checked></a></li>
@@ -57,10 +54,10 @@
             </div>
         </div>
         <div id="mapLoading" style="width:500px;height:380px;background-image: url('/ajax-loader.gif'); background-repeat: no-repeat;background-position:center;" ;>
+            <input id="pac-input" class="controls" type="text" placeholder="Search location">
             <div id="googleMap" style="width:500px;height:380px;"></div>
             <div id="slipwayInfo" style="width:500px;height:380px;"></div>
         </div>
-
         <!--https://github.com/mahnunchik/markerclustererplus/blob/master/dist/markerclusterer.min.js-->
         <script src="/static/markerclusterer.min.js"></script>
         <script src="/utils.js" type="text/javascript"></script>
@@ -73,7 +70,6 @@
         <script src="/submitNewSlipwayDetails.js" type="text/javascript"></script>
         <script src="/submitSlipwayDetails.js" type="text/javascript"></script>
         <script src="/filterSlipways.js" type="text/javascript"></script>
-
 </body>
 
 </html>
