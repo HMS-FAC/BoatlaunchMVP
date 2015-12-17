@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Boatlaunch</h1>
+    <div>
+ 
         <div>
-            <div class="col-xs-2 dropdown">
+            <div>
                 <button onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
             </div>
             <div class="col-xs-2">
@@ -53,10 +53,10 @@
                 </ul>
             </div>
         </div>
-        <div id="mapLoading" style="width:500px;height:380px;background-image: url('/ajax-loader.gif'); background-repeat: no-repeat;background-position:center;" ;>
+        <div id="mapLoading" ;>
             <input id="pac-input" class="controls" type="text" placeholder="Search location">
-            <div id="googleMap" style="width:500px;height:380px;"></div>
-            <div id="slipwayInfo" style="width:500px;height:380px;"></div>
+            <div id="googleMap"></div>
+            <div id="slipwayInfo"></div>
         </div>
         <!--https://github.com/mahnunchik/markerclustererplus/blob/master/dist/markerclusterer.min.js-->
         <script src="/static/markerclusterer.min.js"></script>
