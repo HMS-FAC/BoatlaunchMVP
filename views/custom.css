@@ -1,34 +1,5 @@
-button {
-   border-top: 1px solid #010203;
-   background: #7e8385;
-   background: -webkit-gradient(linear, left top, left bottom, from(#e1e8ed), to(#7e8385));
-   background: -webkit-linear-gradient(top, #e1e8ed, #7e8385);
-   background: -moz-linear-gradient(top, #e1e8ed, #7e8385);
-   background: -ms-linear-gradient(top, #e1e8ed, #7e8385);
-   background: -o-linear-gradient(top, #e1e8ed, #7e8385);
-   padding: 6px 12px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #171017;
-   font-size: 12px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-button:hover {
-   border-top-color: #d4a517;
-   background: #d4a517;
-   color: #e8eaf7;
-   }
-button:active {
-   border-top-color: #838e96;
-   background: #838e96;
-   }
+
+
 .btn {
 	margin:5px;
 }
@@ -53,10 +24,11 @@ button:active {
 #mapLoading {
     width: 100%;
     height: 35em;
-    background-image: url('/ajax-loader.gif');
+    background-image: url('/279.GIF');
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+
 }
 
 #googleMap { 

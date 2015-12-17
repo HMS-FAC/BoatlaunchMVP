@@ -30,6 +30,7 @@ function createMapWithSlipways(slipways) {
              marker.setMap(map);
              marker.addListener('click', function() {
                if (infowindow) {
+                 console.log(infowindow);
                  infowindow.close();
                }
 
