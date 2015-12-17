@@ -1,5 +1,6 @@
 function showEditSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
+  '<form role="form>'+
   '<div id=info><br><br>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name" value="'             +Name+               '"><br><br>'+
@@ -54,5 +55,6 @@ function showEditSlipwayForm(){
     '<b>Charges:</b> '              +'<input type="text" id="Charges" value="'            +Charges+            '"><br><br>'+
     '<button class="btn btn-default btn-md" onclick="submitSlipwayDetails()" type="button">Submit Slipway Details</button>' +
 
-  '</div>';
+  '</div>'+
+  '</form>';
 }

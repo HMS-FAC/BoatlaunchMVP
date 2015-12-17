@@ -2,7 +2,7 @@ function showNewSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
 
   '<form role="form">'+
-  '<div id=info><br><br>'+
+  '<div id=info>'+
     '<h3>Location:</h3>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name"                                           ><br><br>'+

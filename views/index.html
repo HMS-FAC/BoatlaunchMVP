@@ -9,6 +9,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="/static/bootstrap-switch.css" rel="stylesheet">
     <link href="/custom.css" rel="stylesheet">
     <script src="/static/bootstrap-switch.js"></script>
@@ -17,10 +19,10 @@
 
 <body>
     <div>
- 
-        <nav>
-         <a href="#info" >  <button class="btn btn-default btn-md " onclick="showNewSlipwayForm()" type="button">Add New Slipway</button></a>
-            
+        <nav id="navigation">
+            <a href="#upButton">
+                <button class="btn btn-default btn-md " onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
+            </a>
             <div class="col-xs-2">
             </div>
             <div class=" dropdownButton">
@@ -52,10 +54,14 @@
                 </ul>
             </div>
         </nav>
-
         <div id="mapLoading" ;>
             <input id="pac-input" class="controls" type="text" placeholder="Search location">
             <div id="googleMap"></div>
+            <div id="upButton">
+                <a href="#navigation">
+                    <span class="glyphicon glyphicon-menu-up"></span>
+                </a>
+            </div>
             <div id="slipwayInfo"></div>
         </div>
         <!--https://github.com/mahnunchik/markerclustererplus/blob/master/dist/markerclusterer.min.js-->
