@@ -18,14 +18,13 @@
 <body>
     <div>
  
-        <div>
-            <div>
-                <button onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
-            </div>
+        <nav>
+         <a href="#info" >  <button class="btn btn-default btn-md " onclick="showNewSlipwayForm()" type="button">Add New Slipway</button></a>
+            
             <div class="col-xs-2">
             </div>
             <div class=" dropdownButton">
-                <button class="btn btn-default btn-sm dropdown-toggle dropdownButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <button class="btn btn-default btn-md dropdown-toggle dropdownButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by Suitability
                     <span class="caret"></span>
                 </button>
@@ -52,7 +51,8 @@
                     <li><a href="#" id="submit-filter" class="btn btn-primary btn-lg btn-sm active" role="button">Filter</a></li>
                 </ul>
             </div>
-        </div>
+        </nav>
+
         <div id="mapLoading" ;>
             <input id="pac-input" class="controls" type="text" placeholder="Search location">
             <div id="googleMap"></div>
