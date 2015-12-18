@@ -1,10 +1,10 @@
 body, html ,nav {
-	background-color: black;
+	background-color: #EDEDED;
 }
 
 form {
 	margin:10px;
-	color : white;
+	color : black;
 }
 .btn {
 	margin:5px;
@@ -114,6 +114,6 @@ select, select option {
 	text-align: center;
 	font-size: 1.3em ;
 	margin: 1em 1em 0;
-	color: white;
+	color: black;
 	text-decoration: none;
 }
