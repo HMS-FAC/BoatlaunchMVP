@@ -7,6 +7,9 @@ function showEditSlipwayForm(){
                 '<a href="#navigation">'+
                     '<span class="glyphicon glyphicon-menu-up"></span>'+
                 '</a>'+
+                '<a href="#navigation">'+
+                    '<span class="glyphicon glyphicon-menu-down"></span>'+
+                '</a>'+
   '</div>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name" value="'             +Name+               '"><br><br>'+

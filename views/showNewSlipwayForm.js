@@ -4,9 +4,12 @@ function showNewSlipwayForm(){
   '<form role="form">'+
  
   '<div id=info>'+
-    '<div id="upButton">'+
+    '<div class="smooth" id="upDownButton" >'+
                 '<a href="#navigation">'+
                     '<span class="glyphicon glyphicon-menu-up"></span>'+
+                '</a>'+
+                '<a href="#info">'+
+                    '<span class="glyphicon glyphicon-menu-down"></span>'+
                 '</a>'+
     '</div>'+
     '<h3>Location:</h3>'+

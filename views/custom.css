@@ -110,10 +110,11 @@ select, select option {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-#upButton, #upButton a {
+#upDownButton, #upDownButton a {
 	text-align: center;
 	font-size: 1.3em ;
-	margin: 1em auto 0;
+	margin: 1em 1em 0;
 	color: white;
 	text-decoration: none;
 }
+
