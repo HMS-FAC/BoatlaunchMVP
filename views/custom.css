@@ -1,8 +1,8 @@
-body, html ,nav { 
+body, html ,nav {
 	background-color: black;
 }
 
-form { 
+form {
 	margin:10px;
 	color : white;
 }
@@ -10,7 +10,7 @@ form {
 	margin:5px;
 }
 
-select, select option { 
+select, select option {
 	background-color: #737373;
 }
 
@@ -18,7 +18,7 @@ select, select option {
 	margin-left: 2em;
 }
 
-#addButton { 
+#addButton {
 	display: inline-block;
 	position: relative;
 	}
@@ -26,7 +26,7 @@ select, select option {
 #mapLoading {
     width: 100%;
     height: 37em;
-    background-image: url('/279.GIF');
+    background-image: url('/110.GIF');
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
@@ -34,7 +34,7 @@ select, select option {
 
 }
 
-#googleMap { 
+#googleMap {
 	width: 100%;
 	height:100%;
 }
@@ -48,11 +48,11 @@ select, select option {
 	margin: 2em;
 }
 
-#unkown-slipways, .bootstrap-switch { 
+#unkown-slipways, .bootstrap-switch {
 	margin-left: 1.5em;
 }
 
-#submit-filter { 
+#submit-filter {
 	background-color: #4d4dff;
 }
 
