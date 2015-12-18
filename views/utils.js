@@ -83,7 +83,7 @@ utils = {
       '</div>' +
       '<p hidden id="key">'+key+'</p hidden>'+
 
-      '<a href="#upDownButton"><button class="btn btn-default btn-md " onclick="showSlipwayDetails()" type="button">More Info</button></a>' +
+      '<a href="#upDownButton"><button class="btn btn-default btn-md " onclick="showSlipwayDetails(); test(\'upDownButton\'); return false" type="button">More Info</button></a>' +
       '</div>';
   }
 
