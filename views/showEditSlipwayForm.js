@@ -1,7 +1,13 @@
 function showEditSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
   '<form role="form>'+
+
   '<div id=info><br><br>'+
+   '<div id="upButton">'+
+                '<a href="#navigation">'+
+                    '<span class="glyphicon glyphicon-menu-up"></span>'+
+                '</a>'+
+  '</div>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name" value="'             +Name+               '"><br><br>'+
     '</h4>'+

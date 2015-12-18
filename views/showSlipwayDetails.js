@@ -73,8 +73,14 @@ function showSlipwayDetails(DbObj) {
 
   document.getElementById("slipwayInfo").innerHTML =
   '<form role="form">'+
+
   '<button class="btn btn-default btn-md" onclick="showEditSlipwayForm()" type="button">Edit Slipway Details</button>' +
   '<div id=info><br><br>'+
+  '<div id="upButton">'+
+                '<a href="#navigation">'+
+                    '<span class="glyphicon glyphicon-menu-up"></span>'+
+                '</a>'+
+  '</div>'+
     '<h2>'+
                                       Name                +'<br>'+
     '</h2>'+
