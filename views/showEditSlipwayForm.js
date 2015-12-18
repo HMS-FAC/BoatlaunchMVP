@@ -1,7 +1,16 @@
 function showEditSlipwayForm(){
   document.getElementById("slipwayInfo").innerHTML =
-  '<button onclick="submitSlipwayDetails()" type="button">Submit Slipway Details</button>' +
+  '<form role="form>'+
+
   '<div id=info><br><br>'+
+   '<div id="upButton">'+
+                '<a href="#navigation">'+
+                    '<span class="glyphicon glyphicon-menu-up"></span>'+
+                '</a>'+
+                '<a href="#navigation">'+
+                    '<span class="glyphicon glyphicon-menu-down"></span>'+
+                '</a>'+
+  '</div>'+
     '<h4>'+
     '<b>Name:</b> '                 +'<input type="text" id="Name" value="'             +Name+               '"><br><br>'+
     '</h4>'+
@@ -23,7 +32,7 @@ function showEditSlipwayForm(){
                                         '<option value="Portable Only">Portable Only</option>'+
                                         '<option value="Small trailer can be pushed">Small trailer can be pushed</option>'+
                                         '<option value="Large trailer needs a car">Large trailer needs a car</option>'+
-                                     '</select>'+                                                              '><br><br>'+
+                                     '</select>'+                                                              '<br><br>'+
     '<b>Ramp Length:</b> '          +'<select id="RampLength">'+
                                         '<option value="Unknown">Unknown</option>'+
                                         '<option value="No Ramp">No Ramp</option>'+
@@ -33,7 +42,7 @@ function showEditSlipwayForm(){
                                         '<option value="Whole of tidal range">Whole of tidal range</option>'+
                                         '<option value="1/4 tidal">1/4 tidal</option>'+
                                         '<option value="Non-tidal">Non-tidal</option>'+
-                                      '</select>'+                                                              '><br><br>'+
+                                      '</select>'+                                                              '<br><br>'+
     '<b>Facilities:</b> '           +'<input type="text" id="Facilities" value="'         +Facilities+         '"><br><br>'+
     '<b>Navigational Hazards:</b> ' +'<input type="text" id="NavigationalHazards" value="'+NavigationalHazards+'"><br><br>'+
     '<b>Upper Area Material:</b> '  +'<select id="UpperAreaMaterial">'+
@@ -43,7 +52,7 @@ function showEditSlipwayForm(){
                                         '<option value="Rock">Rock</option>'+
                                         '<option value="Harbour">Harbour</option>'+
                                         '<option value="Concrete">Concrete</option>'+
-                                     '</select>'+                                                               '><br><br>'+
+                                     '</select>'+                                                               '<br><br>'+
     '<b>Lower Area Material:</b> '  +'<select id="LowerAreaMaterial">'+
                                         '<option value="Unknown">Unknown</option>'+
                                         '<option value="Sand">Sand</option>'+
@@ -51,7 +60,10 @@ function showEditSlipwayForm(){
                                         '<option value="Rock">Rock</option>'+
                                         '<option value="Harbour">Harbour</option>'+
                                         '<option value="Concrete">Concrete</option>'+
-                                     '</select>'+                                                               '><br><br>'+
+                                     '</select>'+                                                               '<br><br>'+
     '<b>Charges:</b> '              +'<input type="text" id="Charges" value="'            +Charges+            '"><br><br>'+
-  '</div>';
+    '<button class="btn btn-default btn-md" onclick="submitSlipwayDetails()" type="button">Submit Slipway Details</button>' +
+
+  '</div>'+
+  '</form>';
 }
