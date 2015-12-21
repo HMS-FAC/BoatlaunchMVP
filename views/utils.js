@@ -84,11 +84,10 @@ utils = {
   
         currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         map.setCenter(currentLocation);
-        map.setZoom(18);
-        console.log('PPPP',position.coords.latitude, position.coords.longitude);
+        map.setZoom(14);
         var slipwayInfo= document.getElementById('slipwayInfo');
         slipwayInfo.innerHTML = '';
-        slipwayInfo.innerHTML += '<h4 id="latLong">Latitude:'+position.coords.latitude.toFixed(3)+', Longitude:'+position.coords.longitude.toFixed(3)+'</h5>';
+        slipwayInfo.innerHTML += '<h4 id="latLong">Latitude:'+position.coords.latitude.toFixed(3)+', Longitude:'+position.coords.longitude.toFixed(3)+'</h4>';
 
 
       }, function() {
