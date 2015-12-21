@@ -118,7 +118,7 @@ select, select option {
 
 .wrapper { 
   background-color: white;
-  border-color: black;
+  border-color: #878787;
   border-radius:5px;
   border:solid 1px;
 }
