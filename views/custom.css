@@ -21,6 +21,7 @@ select, select option {
 #addButton {
 	display: inline-block;
 	position: relative;
+  float:left;
 	}
 
 #mapLoading {
@@ -40,7 +41,7 @@ select, select option {
 }
 .dropdownButton {
 	float : right;
-	display: block;
+	display: inline-block;
 	position: relative;
 }
 
