@@ -81,34 +81,40 @@ function showSlipwayDetails(DbObj) {
                     '<span class="glyphicon glyphicon-menu-down"></span>'+
                 '</a>'+
     '</div>'+
-
-  '<div id=info>'+
-
     '<button class="btn btn-default btn-md" onclick="showEditSlipwayForm()" type="button">Edit Slipway Details</button>' +
+    '<br>'+
+'<div id=info>'+
+
+   
     '<h2>'+
                                       Name                +'<br>'+
     '</h2>'+
     '<h3>'+
+
     'Contact Details '                                    +'<br>'+
     '</h3>'+
-    '<b>Website:</b> '              + Website             +'<br><br>'+
-    '<b>Contact Name:</b> '         + PersonName          +'<br><br>'+
-    '<b>Contact Phone:</b> '        + PhoneNumber         +'<br><br>'+
-    '<b>Contact Mobile:</b> '       + MobilePhoneNumber   +'<br><br>'+
-    '<b>Email:</b> '                + Email               +'<br><br>'+
+    '<div class="wrapper">'+
+      '<b>Website:</b> '              + Website             +'<br><br>'+
+      '<b>Contact Name:</b> '         + PersonName          +'<br><br>'+
+      '<b>Contact Phone:</b> '        + PhoneNumber         +'<br><br>'+
+      '<b>Contact Mobile:</b> '       + MobilePhoneNumber   +'<br><br>'+
+      '<b>Email:</b> '                + Email               +'<br><br>'+
+    '</div>'+
     '<h3>'+
     'Slipway Details '                                    +'<br>'+
     '</h3>'+
-    '<b>Latitude:</b> '             + Latitude            +'<br><br>'+
-    '<b>Longitude:</b> '            + Longitude           +'<br><br>'+
-    '<b>Ramp Description:</b> '     + RampDescription     +'<br><br>'+
-    '<b>Ramp Type:</b> '            + RampType            +'<br><br>'+
-    '<b>Suitable for:</b> '         + Suitability         +'<br><br>'+
-    '<b>Ramp Length:</b> '          + RampLength          +'<br><br>'+
-    '<b>Facilities:</b> '           + Facilities          +'<br><br>'+
-    '<b>Navigational Hazards:</b> ' + NavigationalHazards +'<br><br>'+
-    '<b>Upper Area Material:</b> '  + UpperArea           +'<br><br>'+
-    '<b>Lower Area Material:</b> '  + LowerArea           +'<br><br>'+
-    '<b>Charges:</b> '              + Charges             +'<br><br>'+
+    '<div class="wrapper">'+
+      '<b>Latitude:</b> '             + Latitude            +'<br><br>'+
+      '<b>Longitude:</b> '            + Longitude           +'<br><br>'+
+      '<b>Ramp Description:</b> '     + RampDescription     +'<br><br>'+
+      '<b>Ramp Type:</b> '            + RampType            +'<br><br>'+
+      '<b>Suitable for:</b> '         + Suitability         +'<br><br>'+
+      '<b>Ramp Length:</b> '          + RampLength          +'<br><br>'+
+      '<b>Facilities:</b> '           + Facilities          +'<br><br>'+
+      '<b>Navigational Hazards:</b> ' + NavigationalHazards +'<br><br>'+
+      '<b>Upper Area Material:</b> '  + UpperArea           +'<br><br>'+
+      '<b>Lower Area Material:</b> '  + LowerArea           +'<br><br>'+
+      '<b>Charges:</b> '              + Charges             +'<br><br>'+
+    '</div>'+
   '</div>';
 }

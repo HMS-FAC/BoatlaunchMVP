@@ -21,12 +21,13 @@
     <div>
         <nav id="navigation">
             <a href="#upDownButton" >
-                <button class="btn btn-default btn-md " onclick="showNewSlipwayForm()" type="button">Add New Slipway</button>
+                <button class="btn btn-default btn-sm " onclick="showNewSlipwayForm()" type="button">New Slipway</button>
             </a>
-            <div class="col-xs-2">
-            </div>
-            <div class=" dropdownButton">
-                <button class="btn btn-default btn-md dropdown-toggle dropdownButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <a href="#slipwayInfo"> 
+                <button class="btn btn-default btn-sm " type="buton" onclick="utils.getLocation(map)">Location</button>
+            </a>
+                <div class=" dropdownButton">
+                <button class="btn btn-default btn-sm dropdown-toggle dropdownButton" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by Suitability
                     <span class="caret"></span>
                 </button>
@@ -57,7 +58,6 @@
         <div id="mapLoading" ;>
             <input id="pac-input" class="controls" type="text" placeholder="Search location">
             <div id="googleMap"></div>
-
             <div id="slipwayInfo"></div>
         </div>
         <!--https://github.com/mahnunchik/markerclustererplus/blob/master/dist/markerclusterer.min.js-->
@@ -72,29 +72,11 @@
         <script src="/submitNewSlipwayDetails.js" type="text/javascript"></script>
         <script src="/submitSlipwayDetails.js" type="text/javascript"></script>
         <script src="/filterSlipways.js" type="text/javascript"></script>
-        <script>
-          function scrollTo(to, duration) {
-              if (document.body.scrollTop == to) return;
-              var diff = to - document.body.scrollTop;
-              var scrollStep = Math.PI / (duration / 10);
-              var count = 0, currPos;
-              start = document.body.scrollTop;
-              scrollInterval = setInterval(function(){
-                  if (document.body.scrollTop != to) {
-                      count = count + 1;
-                      currPos = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
-                      document.body.scrollTop = currPos;
-                  }
-                  else { clearInterval(scrollInterval); }
-              },10);
-          }
+        <script type="text/javascript">
 
-          function test(elID)
-          {
-              var dest = document.getElementById(elID);
-              scrollTo(dest.offsetTop, 500);
-          }
+
         </script>
+   
 </body>
 
 </html>

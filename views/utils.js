@@ -76,6 +76,31 @@ utils = {
     }
   },
 
+  getLocation: function(map){
+
+    if (navigator.geolocation) {
+      browserSupportFlag = true;
+      navigator.geolocation.getCurrentPosition(function(position) {
+  
+        currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(currentLocation);
+        map.setZoom(14);
+        var slipwayInfo= document.getElementById('slipwayInfo');
+        slipwayInfo.innerHTML = '';
+        slipwayInfo.innerHTML += '<h4 id="latLong">Latitude:'+position.coords.latitude.toFixed(3)+', Longitude:'+position.coords.longitude.toFixed(3)+'</h4>';
+
+
+      }, function() {
+        initialLocation = new google.maps.LatLng(51.508742, -0.120850);
+      });
+    } else {
+        initialLocation = new google.maps.LatLng(51.508742, -0.120850);
+    }
+
+
+
+  },
+
   renderInfoContent: function(data, key) {
 
     return '<div id="name">' +
@@ -83,8 +108,9 @@ utils = {
       '</div>' +
       '<p hidden id="key">'+key+'</p hidden>'+
 
-      '<a href="#upDownButton"><button class="btn btn-default btn-md " onclick="showSlipwayDetails(); test(\'upDownButton\'); return false" type="button">More Info</button></a>' +
+      '<a href="#upDownButton"><button class="btn btn-default btn-md " onclick="showSlipwayDetails()" type="button">More Info</button></a>' +
       '</div>';
   }
+
 
 };
